@@ -1,0 +1,12 @@
+[
+	{key: ["informeren"], value: ["laten", "weten"]},
+	{key: ["gestald"], value: ["neergezet"]},
+	{key: ["in", "strijd", "met"], value: ["niet", "toegestaan", "volgens"]},
+	{key: ["verzoeken"], value: ["vragen"]},
+	{key: ["dagtekening"], value: ["de", "datum"]},
+	{key: ["te", "verplaatsen"], value: ["weg", "te", "halen"]},
+	{key: ["indien"], value: ["als"]},
+	{key: ["na", "deze", "termijn"], value: ["dan", "nog"]},
+	{key: ["verwijderd"], value: ["weggehaald"]},
+	{key: ["spoedige"], value: ["snelle"]}
+]
