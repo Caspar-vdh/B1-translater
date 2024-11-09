@@ -61,7 +61,7 @@ public class Token {
     public static Token fromString(String input) {
         char firstChar = input.charAt(0);
         if (Character.isLetter(firstChar)) {
-            return new Token(Type.WORD, input, Character.isUpperCase(firstChar));
+            return new Token(Type.WORD, input.toLowerCase(), Character.isUpperCase(firstChar));
         } else if (Pattern.matches("\\p{Punct}", input)){
             return new Token(Type.PUNCTUATION, input);
         } else if (input.equals(System.getProperty("line.separator", "\n"))) {

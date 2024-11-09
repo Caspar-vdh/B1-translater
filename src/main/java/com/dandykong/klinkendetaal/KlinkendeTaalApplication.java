@@ -13,8 +13,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 @SpringBootApplication
-public class KlinkendetaalApplication {
-	private static Logger LOG = LoggerFactory.getLogger(KlinkendetaalApplication.class);
+public class KlinkendeTaalApplication {
+	private static Logger LOG = LoggerFactory.getLogger(KlinkendeTaalApplication.class);
 
 	@Bean
 	public Tokenizer tokenizer() {
@@ -33,7 +33,7 @@ public class KlinkendetaalApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(KlinkendetaalApplication.class, args);
+		SpringApplication.run(KlinkendeTaalApplication.class, args);
 	}
 
 }
