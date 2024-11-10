@@ -12,14 +12,14 @@ public class Dictionary {
     // Store entries in a map where the keys are the first word
     Map<String, DictionaryEntry> entryMap = new HashMap<>();
 
-    void read(File input) throws IOException {
+    public void read(File input) throws IOException {
         DictionaryEntry[] dictionaryEntries = new ObjectMapper().readValue(input, DictionaryEntry[].class);
         for (DictionaryEntry entry : dictionaryEntries) {
             entryMap.put(entry.getKey()[0], entry);
         }
     }
 
-    DictionaryEntry getEntryForWord(String word) {
+    public DictionaryEntry getEntryForWord(String word) {
         return entryMap.get(word);
     }
 }
