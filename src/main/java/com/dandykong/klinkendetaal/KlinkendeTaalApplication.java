@@ -14,7 +14,7 @@ import java.nio.file.Path;
 
 @SpringBootApplication
 public class KlinkendeTaalApplication {
-	private static Logger LOG = LoggerFactory.getLogger(KlinkendeTaalApplication.class);
+	private static final Logger LOG = LoggerFactory.getLogger(KlinkendeTaalApplication.class);
 
 	@Bean
 	public Tokenizer tokenizer() {

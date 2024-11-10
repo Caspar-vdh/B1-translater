@@ -1,4 +1,4 @@
-package com.dandykong.klinkendetaal.model;
+package com.dandykong.klinkendetaal.model.translater;
 
 import com.dandykong.klinkendetaal.model.dictionary.Dictionary;
 import com.dandykong.klinkendetaal.model.dictionary.DictionaryEntry;
@@ -27,29 +27,32 @@ public class Translater {
                 if (dictionaryEntry == null) {
                     translatedTokens.add(token);
                 } else {
-                    boolean validPhraseFound = true;
+                    boolean shouldRollBack = false;
+                    int rollBack = 0;
                     boolean isFirstTokenCapitalized = token.isCapitalized();
-                    List<Token> originalPhrase = new ArrayList<>(List.of(token));
                     for (int i = 1; i < dictionaryEntry.getKey().length; i++) {
                         if (!iterator.hasNext()) {
-                            validPhraseFound = false;
+                            shouldRollBack = true;
                             break;
                         }
                         Token nextToken = iterator.next();
-                        originalPhrase.add(nextToken);
+                        rollBack++;
                         if (!nextToken.getValue().equals(dictionaryEntry.getKey()[i])) {
-                            validPhraseFound = false;
+                            shouldRollBack = true;
                         }
                     }
-                    if (validPhraseFound) {
+                    if (shouldRollBack) {
+                        // roll back the iterator and then add the original tokens
+                        translatedTokens.add(token);
+                        for (int i = 0; i < rollBack; i++) {
+                            iterator.previous();
+                        }
+                    } else {
                         // it was a match, create tokens for the translation
                         String[] translatedStrings = dictionaryEntry.getValue();
                         IntStream.range(0, translatedStrings.length)
                                 .mapToObj(i -> new Token(Token.Type.WORD, translatedStrings[i], i == 0 && isFirstTokenCapitalized))
                                 .forEach(translatedTokens::add);
-                    } else {
-                        // roll back the iterator and then add the original tokens
-                        translatedTokens.addAll(originalPhrase);
                     }
                 }
             } else {

@@ -1,4 +1,4 @@
-package com.dandykong.klinkendetaal.model;
+package com.dandykong.klinkendetaal.model.translater;
 
 import com.dandykong.klinkendetaal.model.dictionary.Dictionary;
 import com.dandykong.klinkendetaal.model.tokenizer.Token;
@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import static com.dandykong.klinkendetaal.TestTools.createTokenList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TranslaterTest {
@@ -20,12 +20,12 @@ class TranslaterTest {
 
     @BeforeAll
     public static void setUp() throws IOException, URISyntaxException {
-        File dictionaryFile = new File(Objects.requireNonNull(TranslaterTest.class.getResource("/Dictionary.txt")).toURI());
+        File dictionaryFile = new File(Objects.requireNonNull(TranslaterTest.class.getResource("/Dictionary.json")).toURI());
         dictionary.read(dictionaryFile);
     }
 
     @Test
-    public void translateMultipleTokenPhrase() throws URISyntaxException, IOException {
+    public void translateMultipleTokenPhrase() {
         // the dictionary translates tokens "na", "deze", "termijn" to "dan", "nog"
         Translater translater = new Translater(dictionary);
         List<Token> originalTokenList = createTokenList("na", "deze", "termijn");
@@ -37,6 +37,14 @@ class TranslaterTest {
         originalTokenList = createTokenList("na", "deze", "periode");
         translatedTokenList = translater.translate(originalTokenList);
         assertEquals(originalTokenList, translatedTokenList);
+
+        // the phrase to translate is "na dagtekening"
+        // the word "na" matches "na deze termijn", but that should not be used
+        // the word "dagtekening" has its own entry in the dictionary
+        originalTokenList = createTokenList("na", "dagtekening");
+        translatedTokenList = translater.translate(originalTokenList);
+        expectedTokenList = createTokenList("na", "de", "datum");
+        assertEquals(expectedTokenList, translatedTokenList);
     }
 
     @Test
@@ -65,7 +73,5 @@ class TranslaterTest {
         assertEquals(expectedTokenList, translatedTokenList);
     }
 
-    private List<Token> createTokenList(String... inputStrings) {
-        return Arrays.stream(inputStrings).map(Token::fromString).toList();
-    }
+
 }
