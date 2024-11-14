@@ -1,8 +1,8 @@
-package com.dandykong.klinkendetaal.model.translater;
+package com.dandykong.b1translater.model.translater;
 
-import com.dandykong.klinkendetaal.model.dictionary.Dictionary;
-import com.dandykong.klinkendetaal.model.dictionary.DictionaryEntry;
-import com.dandykong.klinkendetaal.model.tokenizer.Token;
+import com.dandykong.b1translater.model.dictionary.Dictionary;
+import com.dandykong.b1translater.model.dictionary.DictionaryEntry;
+import com.dandykong.b1translater.model.tokenizer.Token;
 
 import java.util.ArrayList;
 import java.util.List;

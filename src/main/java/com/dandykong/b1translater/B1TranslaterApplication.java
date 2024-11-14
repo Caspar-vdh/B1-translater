@@ -1,10 +1,10 @@
-package com.dandykong.klinkendetaal;
+package com.dandykong.b1translater;
 
-import com.dandykong.klinkendetaal.model.dictionary.Dictionary;
-import com.dandykong.klinkendetaal.model.tokenizer.Token;
-import com.dandykong.klinkendetaal.model.tokenizer.Tokenizer;
-import com.dandykong.klinkendetaal.model.translater.Translater;
-import com.dandykong.klinkendetaal.model.writer.TokenWriter;
+import com.dandykong.b1translater.model.dictionary.Dictionary;
+import com.dandykong.b1translater.model.tokenizer.Token;
+import com.dandykong.b1translater.model.tokenizer.Tokenizer;
+import com.dandykong.b1translater.model.translater.Translater;
+import com.dandykong.b1translater.model.writer.TokenWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanCreationException;
@@ -23,8 +23,8 @@ import java.nio.file.Path;
 import java.util.List;
 
 @SpringBootApplication
-public class KlinkendeTaalApplication {
-	private static final Logger LOG = LoggerFactory.getLogger(KlinkendeTaalApplication.class);
+public class B1TranslaterApplication {
+	private static final Logger LOG = LoggerFactory.getLogger(B1TranslaterApplication.class);
 
 	@Bean
 	public Tokenizer tokenizer() {
@@ -74,7 +74,7 @@ public class KlinkendeTaalApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(KlinkendeTaalApplication.class, args);
+		SpringApplication.run(B1TranslaterApplication.class, args);
 	}
 
 }

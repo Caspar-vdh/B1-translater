@@ -1,4 +1,4 @@
-package com.dandykong.klinkendetaal.model.dictionary;
+package com.dandykong.b1translater.model.dictionary;
 
 import java.util.Arrays;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package com.dandykong.klinkendetaal.model.tokenizer;
+package com.dandykong.b1translater.model.tokenizer;
 
 import java.util.Objects;
 import java.util.regex.Pattern;

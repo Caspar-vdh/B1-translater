@@ -1,6 +1,6 @@
-package com.dandykong.klinkendetaal;
+package com.dandykong.b1translater;
 
-import com.dandykong.klinkendetaal.model.tokenizer.Token;
+import com.dandykong.b1translater.model.tokenizer.Token;
 
 import java.util.Arrays;
 import java.util.List;

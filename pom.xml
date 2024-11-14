@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dandykong</groupId>
-	<artifactId>klinkendetaal</artifactId>
+	<artifactId>b1translater</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>klinkendetaal</name>
-	<description>Demo project for Klinkende Taal</description>
+	<name>b1translater</name>
+	<description>Demo project for a B1 Translater</description>
 	<url/>
 	<licenses>
 		<license/>

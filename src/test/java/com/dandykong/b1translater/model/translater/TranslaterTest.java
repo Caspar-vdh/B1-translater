@@ -1,7 +1,7 @@
-package com.dandykong.klinkendetaal.model.translater;
+package com.dandykong.b1translater.model.translater;
 
-import com.dandykong.klinkendetaal.model.dictionary.Dictionary;
-import com.dandykong.klinkendetaal.model.tokenizer.Token;
+import com.dandykong.b1translater.model.dictionary.Dictionary;
+import com.dandykong.b1translater.model.tokenizer.Token;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
 
-import static com.dandykong.klinkendetaal.TestTools.createTokenList;
+import static com.dandykong.b1translater.TestTools.createTokenList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TranslaterTest {

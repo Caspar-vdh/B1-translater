@@ -1,6 +1,6 @@
-package com.dandykong.klinkendetaal.model.writer;
+package com.dandykong.b1translater.model.writer;
 
-import com.dandykong.klinkendetaal.model.tokenizer.Token;
+import com.dandykong.b1translater.model.tokenizer.Token;
 import org.springframework.util.StringUtils;
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.dandykong.klinkendetaal.model.dictionary;
+package com.dandykong.b1translater.model.dictionary;
 
 import org.junit.jupiter.api.Test;
 

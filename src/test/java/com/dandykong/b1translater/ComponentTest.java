@@ -1,10 +1,10 @@
-package com.dandykong.klinkendetaal;
+package com.dandykong.b1translater;
 
-import com.dandykong.klinkendetaal.model.dictionary.Dictionary;
-import com.dandykong.klinkendetaal.model.tokenizer.Token;
-import com.dandykong.klinkendetaal.model.tokenizer.Tokenizer;
-import com.dandykong.klinkendetaal.model.translater.Translater;
-import com.dandykong.klinkendetaal.model.writer.TokenWriter;
+import com.dandykong.b1translater.model.dictionary.Dictionary;
+import com.dandykong.b1translater.model.tokenizer.Token;
+import com.dandykong.b1translater.model.tokenizer.Tokenizer;
+import com.dandykong.b1translater.model.translater.Translater;
+import com.dandykong.b1translater.model.writer.TokenWriter;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
