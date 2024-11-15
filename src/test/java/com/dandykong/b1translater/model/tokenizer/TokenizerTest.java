@@ -28,19 +28,19 @@ class TokenizerTest {
 
         List<Token> wordList = tokenList
                 .stream()
-                .filter(token -> token.getType() == Token.Type.WORD)
+                .filter(token -> token.type() == Token.Type.WORD)
                 .toList();
         assertEquals(73, wordList.size());
 
         List<Token> punctuationList = tokenList
                 .stream()
-                .filter(token -> token.getType() == Token.Type.PUNCTUATION)
+                .filter(token -> token.type() == Token.Type.PUNCTUATION)
                 .toList();
         assertEquals(8, punctuationList.size());
 
         List<Token> newLineList = tokenList
                 .stream()
-                .filter(token -> token.getType() == Token.Type.NEWLINE)
+                .filter(token -> token.type() == Token.Type.NEWLINE)
                 .toList();
         assertEquals(9, newLineList.size());
     }

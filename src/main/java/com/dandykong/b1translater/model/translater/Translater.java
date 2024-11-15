@@ -22,14 +22,14 @@ public class Translater {
         ListIterator<Token> iterator = originalTokens.listIterator();
         while (iterator.hasNext()) {
             Token token = iterator.next();
-            if (token.getType() == Token.Type.WORD) {
-                DictionaryEntry dictionaryEntry = dictionary.getEntryForWord(token.getValue());
+            if (token.type() == Token.Type.WORD) {
+                DictionaryEntry dictionaryEntry = dictionary.getEntryForWord(token.value());
                 if (dictionaryEntry == null) {
                     translatedTokens.add(token);
                 } else {
                     boolean shouldRollBack = false;
                     int rollBack = 0;
-                    boolean isFirstTokenCapitalized = token.isCapitalized();
+                    boolean isFirstTokenCapitalized = token.capitalized();
                     for (int i = 1; i < dictionaryEntry.getKey().length; i++) {
                         if (!iterator.hasNext()) {
                             shouldRollBack = true;
@@ -37,7 +37,7 @@ public class Translater {
                         }
                         Token nextToken = iterator.next();
                         rollBack++;
-                        if (!nextToken.getValue().equals(dictionaryEntry.getKey()[i])) {
+                        if (!nextToken.value().equals(dictionaryEntry.getKey()[i])) {
                             shouldRollBack = true;
                         }
                     }

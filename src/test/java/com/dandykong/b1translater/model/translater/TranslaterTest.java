@@ -56,7 +56,7 @@ class TranslaterTest {
         // result should start with a capital letter too
         List<Token> expectedTokenList = createTokenList("Dan", "nog");
         assertEquals(expectedTokenList, translatedTokenList);
-        assertTrue(translatedTokenList.get(0).isCapitalized());
+        assertTrue(translatedTokenList.get(0).capitalized());
     }
 
     @Test

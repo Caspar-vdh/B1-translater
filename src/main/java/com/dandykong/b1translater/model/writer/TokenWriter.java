@@ -13,22 +13,22 @@ public class TokenWriter {
         boolean addSpace = false;
 
         for (Token token : tokens) {
-            switch (token.getType()) {
+            switch (token.type()) {
                 case WORD -> {
                     if (addSpace) {
                         writer.write(" ");
                     }
-                    String value = token.isCapitalized() ?
-                            StringUtils.capitalize(token.getValue()) :
-                            token.getValue();
+                    String value = token.capitalized() ?
+                            StringUtils.capitalize(token.value()) :
+                            token.value();
                     writer.write(value);
                     addSpace = true;
                 }
                 case PUNCTUATION -> {
-                    writer.write(token.getValue());
+                    writer.write(token.value());
                 }
                 case NEWLINE -> {
-                    writer.write(token.getValue());
+                    writer.write(token.value());
                     addSpace = false;
                 }
             }
